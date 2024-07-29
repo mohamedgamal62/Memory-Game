@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial,
+        Tahoma,
+        sans-serif;
+}
+.button {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #00bcd4e0;
+}
+.button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    border-radius:6px ;
+    padding: 15px 25px;
+    background-color: chocolate;
+    font-weight: bold;
+    font-size: 25px;
+}
+.info-countainer{
+    width: 1000px;
+    margin: 20px auto 0;
+    padding: 20px;
+    font-size: 24px;
+    background-color: #f6f6f6;
+    overflow: hidden;
+    border: 2px solid #2196f3 ;
+}
+
+/* @media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+} */
+.countainer.removeClick{
+    pointer-events: none;
+}
+.info-countainer .name {
+    float: left;
+    width: 50%;
+}
+.info-countainer .tries {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.countainer {
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+@media (min-width: 768px) {
+    .countainer
+    ,.info-countainer {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .countainer ,
+     .info-countainer{
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .countainer ,
+    .info-countainer {
+        width: 1170px;
+    }
+}
+.countainer .game-block {
+    width: 19%;
+    text-align: center;
+    margin: 5px;
+    height: 200px;
+    transition: transform .5s;transform-style: preserve-3d;
+    cursor: pointer;
+}
+.countainer .game-block .front {
+    background-color: #333;
+    line-height: 200px;
+}
+.countainer .game-block .front::before {
+    content: '?';
+    font-size: 140px;
+    font-weight: bold;
+    color: white;
+}
+.countainer .game-block .back {
+    background-color: #607D8B;
+    transform: rotateY(180deg);
+}
+.countainer .game-block .back i {
+    font-size: 140px;
+    color: #03a9f4;
+}
+.countainer .game-block .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #2196f3;
+}
+.countainer .game-block.is, 
+.countainer .game-block.match {
+    transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    pointer-events: none;
+}
